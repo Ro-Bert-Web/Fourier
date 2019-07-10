@@ -553,6 +553,7 @@ function compile(s = 20, c = -1){
 
 function spell(t, s = 20, c = -1){
 	text = [];
+	cursor = new Complex(0, 0);
 	for(let i = 0; i < t.length; i++){
 		type(t[i]);
 	}
