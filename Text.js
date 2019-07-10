@@ -552,6 +552,7 @@ function compile(s = 20, c = -1){
 }
 
 function spell(t, s = 20, c = -1){
+	text = [];
 	for(let i = 0; i < t.length; i++){
 		type(t[i]);
 	}
