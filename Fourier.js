@@ -4,9 +4,23 @@ let radiusColor = "#888888";
 let lineColor = "#888800";
 
 class Fourier{
-	constructor(canvas, ctx, n = []){
-		this.canvas = canvas;
-		this.ctx = ctx;
+	constructor(canvas = null, ctx = null, n = []){
+		if(canvas == null){
+			this.canvas = document.createElement("CANVAS");
+			this.canvas.width = window.innerWidth - 20;
+			this.canvas.height = window.innerHeight - 20;
+			document.body.appendChild(this.canvas);
+		}
+		else{
+			this.canvas = canvas;
+		}
+		if(ctx == null){
+			this.ctx = this.canvas.getContext("2d");
+			this.ctx.translate(this.canvas.width / 2, this.canvas.height / 2);
+		}
+		else{
+			this.ctx = ctx;
+		}
 		this.n = n;
 		this.t = 0.0;
 		this.h = [];
